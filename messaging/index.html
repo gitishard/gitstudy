@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Socket.io Express</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#main{width:60%;margin: 20px auto;box-shadow: 5px 5px black;border:1px solid grey;position:relative;}
+		#send-message{display:none;}
+	    #nickname{width: 500px;height: 30px;border-radius: 5px;margin: 0 10px;}
+		#nicknames{width:300px;}
+		#message{margin-left:30px;width: 600px;height: 30px;border-radius: 5px;}
+		#send{border-radius: 5px;height: 30px;width:70px;background-color:#0AFB0A;}
+		#messages p strong{margin-right: 5px;}
+		#messages{width: 510px;}
+		section{margin:0 5px 20px;}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div style="text-align:center;">
+		    <h1>Chat Room</h1>
+			<form action="#" id="set-nickname" style="display: flex;margin-left:50px;">
+				<label for="nickname"><b>Nickname:</b></label>
+				<input type="text" id="nickname" autocomplete="off" required="required" placeholder="Please input your name">
+				<input type="submit" value="Submit" style="background-color:#00A0FF;border-radius: 5px;height:30px">
+			</form>
+		</div>
+		<div style="display: flex;">
+			<section id="messages">
+				<h4>聊天记录：</h4>
+			</section>
+			<section id="nicknames">
+				<h4>在线人员：</h4>
+				<ul></ul>
+			</section>
+		</div>
+		<form action="#" id="send-message" style="display: flex;">
+			<input id="message" type="text" autocomplete="off" required="required" placeholder="请输入消息。。。"/>
+			<input id="send" type="submit" value="Send">
+		</form>
+	</div>
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js" type="text/javascript"></script>
+	<script>
+		var socket=io.connect();
+		$(document).ready(function(){
+			var nickname=$("#nickname");
+			var setNicknameForm=$("#set-nickname");
+			var nicknamesList=$("#nicknames ul");
+			var messageForm=$("#send-message");
+			var message=$("#message");
+			var messages=$("#messages");
+			//提交昵称
+			setNicknameForm.submit(function(event){
+					event.preventDefault();
+					socket.emit('nickname',nickname.val(),function(data){
+						if(data){
+							console.log("Nickname set successfully");
+							setNicknameForm.hide();
+							messageForm.show();
+						}else{
+							setNicknameForm.prepend('<p>Sorry,that nickname is already taken</p>');
+						}
+					});
+			});
+			//提交消息
+			messageForm.submit(function(event){
+				event.preventDefault();
+				socket.emit('user message',message.val());
+				message.val("").focus();
+			});
+			//将所登录的昵称显示在此section中
+			socket.on('nicknames',function(data){
+				var html=" ";
+				for(var i=0;i<data.length;i++){
+					html+='<li>'+data[i]+'</li>';
+				}
+				nicknamesList.empty().append(html);
+			});
+			socket.on('user message',function(data){
+				messages.append("<p><strong>"+data.nick+'：</strong>'+data.message+'</p>');
+			});
+		});
+	</script>
+</body>
+</html>
