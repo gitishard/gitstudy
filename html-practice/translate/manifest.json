@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Translate",
+    "version": "1.0",
+    "description": "translate",
+    "content_scripts": [
+        {
+            "matches":["*://*/*"],
+            "js": ["translate.js"]
+        }
+    ]
+}

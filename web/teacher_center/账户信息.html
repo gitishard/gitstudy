@@ -1,0 +1,209 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <script type="text/javascript" src="..\bootstrap-3.3.7-dist\js\jquery.min.js"></script>
+        <meta http-eqiv="Conent-Type"; content="text/html charset=utf-8">
+        <title>账户信息</title>
+       <script type="text/javascript" src="..\bootstrap-3.3.7-dist\js\bootstrap.js"></script>
+        <!--<script type="text/javascript" src="file://E:\Downloads\jquery-ui-1.12.1.custom\external\jquery\jquery.js"></script>-->
+        <!--<script type="text/javascript" src="file:\\E:\Downloads\jquery-ui-1.12.1.custom\jquery-ui.min.js"></script>
+         <script src="file://E:\Downloads\Timepicki时间选择插件\js/timepicki.js"></script>
+        <script type="text/javascript" src="./to_top.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="..\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="file:\\E:\Downloads\jquery-ui-1.12.1.custom\jquery-ui.min.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="file://E:\Downloads\Timepicki时间选择插件/css/timepicki.css"/> -->
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <!--登录后直接就是最新的动态-->
+        <div>
+            <div id="head"><!--head-->
+                <h1>青蓝教育</h1>
+                <a href="#" id="top"></a>
+            </div>
+            <div >
+                <div class="container"><!--body-->
+                    <div><!--introduce-->
+                            <div>
+                              <h3>Teacher name
+                                    <a href="#123" id="exit_a" onclick="return exit()" data-toggle="popover">
+                                        <small>
+                                            <span class="glyphicon glyphicon-off" title="退出登录"></span>
+                                            <label for="" id="exit_label">退出登录</label>
+                                        </small>
+                                    </a><!--此处加了onclick事件-->
+                              </h3>
+                              <br/><br/>
+                            </div>
+                    </div>
+                    <div><!--display-->
+                        <div id="content">
+                            <div class="nav-border"><!--nav-->
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\主页.html" class="active"><span class="   glyphicon glyphicon-home nav-gly" ></span><br>工作空间</a></li>
+                                        <li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\发布的课程.html"><span class="   glyphicon glyphicon-book nav-gly"></span><br>发布的课</a></li>
+                                        <li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\教师订单.html"><span class="    glyphicon glyphicon-list-alt nav-gly"></span><br>订单详情</a></li>
+                                        <li><a href="file://E:\Downloads\bootstrap\web\teacher_center\账户信息\账户信息.html"><span class="glyphicon glyphicon-user nav-gly"></span><br>账户信息</a></li>
+                                    </ul>
+                            </div>
+                            <div class="personal-info" id="show-info">
+                                <table class="table table-border table-striped">
+                                    <tr>
+                                        <button class="btn btn-default" style="float:right; color:red;" id="change-button">修改信息
+                                            <span class="glyphicon glyphicon-wrench" style="color:red;"></span>
+                                        </button>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>姓名</label></td>
+                                        <td>马云</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>性别</label></td>
+                                        <td>男</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>手机</label></td>
+                                        <td>110</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>住址</label></td>
+                                        <td>杭州阿里总部</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>单位</label></td>
+                                        <td>阿里巴巴集团</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>职业</label></td>
+                                        <td>董事长</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info-left"><label>个人简介</label></td>
+                                        <td>乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师
+                                    乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师乡村英语教师
+                                    </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- 信息修改 -->
+                            <div class="personal-info" style="display:none;" id="edit">
+                                <form action="">
+                                    <table class="table table-border table-striped">
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">姓名</label>
+                                                <div class="col-sm-8 col-md-8">
+                                                     <input type="text" placeholder="请输入您的姓名"required="" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">性别</label>
+                                                <input type="radio" name="sex;"checked>男
+                                                <input type="radio" name="sex" style="margin-left:20px;">女
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">手机</label>
+                                                <div class="col-sm-8 col-md-8"> 
+                                                    <input type="text" placeholder="请输入您的手机号"required="" class="form-control"> 
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">住址</label>
+                                                <div class="col-sm-8 col-md-8">
+                                                    <input type="text" placeholder="请输入住址"required="" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">单位</label>
+                                                <div class="col-sm-8 col-md-8">
+                                                    <input type="text" placeholder="请输入工作单位"required="" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2">职业</label>
+                                                <div class="col-sm-8 col-md-8">
+                                                    <input type="text" placeholder="请输入您现在的职业"required="" class="form-control">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="info-left">
+                                                <label class="col-sm-2 col-md-2"> 个人简介</label>
+                                                <div class="col-sm-8 col-md-8">
+                                                    </div><textarea name="" id=""  rows="5" placeholder="输入您的简介"  required="" class="
+                                                form-control"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="float:right;">
+                                                 <button class="btn btn-default" id="close-change">取消</button>
+                                                <button class="btn btn-primary"  type="submit" id="submit-button">提交修改</button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+
+                            </div>
+                            <!-- 信息修改 -->
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <a href="#top" style="color:green;">
+                <span class="glyphicon glyphicon-arrow-up">top</span>
+            </a>
+        </div>
+    </body>
+    <script type="text/javascript">
+        // show-info//信息显示含修改信息按钮的页面
+        // change-button//修改信息的按钮
+        // edit//含表单的页面
+        // close-change//关闭按钮
+        // submit-button//提及按钮
+        $(function(){
+             OnOff=true;
+            $("#change-button").click(function(){//修改按钮
+                if(OnOff){
+                    $("#show-info").css("display","none");//使信息展示页面隐藏
+                    $("#edit").css("display","block");//信息编辑页面显示
+                }else{
+                     $("#show-info").css("display","block");
+                     $("#edit").css("display","none");
+                }
+                OnOff=false;
+            });
+            $("#close-change").click(function(){//关闭按钮
+                if(!OnOff){
+                    $("#show-info").css("display","block");//使信息展示页面显示
+                    $("#edit").css("display","none");//信息编辑页面隐藏
+                }else{
+                     $("#show-info").css("display","none");
+                     $("#edit").css("display","block");
+                }
+                OnOff=true;
+            });
+            // $("#submit-button").click(function(){//提交按钮
+            //     if(!OnOff){
+            //         $("#show-info").css("display","block");//使信息展示页面显示
+            //         $("#edit").css("display","none");//信息编辑页面隐藏
+            //     }else{
+            //          $("#show-info").css("display","none");
+            //          $("#edit").css("display","block");
+            //     }
+            //     OnOff=true;
+            // });提交后页面自动跳转
+        });
+    </script>
+</html>

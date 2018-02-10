@@ -1,0 +1,132 @@
+﻿<!DOCType html>
+<html>
+<head>
+	<meta http-equiv="Content-Text"; content="text/html charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>吐槽</title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="comment.js"></script>
+	<link rel="stylesheet" href="home_page.css"/>
+</head>
+<body>
+	<a href="#top"></a>
+	<div>
+		<div id="head">
+			<img src="logo.png" alt="青蓝教育" id="himg">
+			<a class="ha" href="#">课程商场</a>
+			<a class="ha" href="#">分享</a>
+			<a class="ha" href="#">联系我们</a>
+			<div class="input-group"id="hinput">
+				<input type="text" class="form-control" placeholder="搜索" style="outline:none;">
+				<span class="input-group-btn">
+					<button class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
+				</span>
+			</div>
+		</div>
+		<div id="body" >
+				<div class="col-sm-3 col-md-3">
+					<img src="head.jpg" alt="头像" class="img-circle" id="bimg">
+				</div>
+				<div id="binfo" class="col-sm-9 col-md-9">
+					<div id="bp">
+						<h1>name</h1>
+						<h5>address</h5>
+					</div>
+				</div>
+		</div>
+		<div class="container" id="content">
+			<div style="width:10%;float:left;">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-home"></span>
+							&nbsp;&nbsp;&nbsp;课程
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;消息
+						</a>
+						</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;&nbsp;收藏
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;&nbsp;订单
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class=" 	glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;吐槽
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class=" 	glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;账号
+						</a>
+					</li>
+				</ul>
+			</div><!--我的课程，消息，路径（计划），题库，订单（学习）记录，吐槽（对老师及本平台的意见），-->
+			
+			<div id="Cdisplay">
+				<form action="" onsubmit="return check(this)">
+					<h4>意见反馈</h4>
+					<!-- <h3 id="error" style="background-color:red;height:40px;text-align:center;display:none;">提交信息不全</h3> -->
+					<hr/>
+					<div class="dropdown" style="display:inline-block;" data-toggle="popover" data-placement="left" data-content="先选老师再评论" title="提示"data-trigger="hover">
+					<label class="dropdown-toggle" id="dropdown" data-toggle="dropdown"><span class="caret"></span>&nbsp;&nbsp;对老师的意见</label>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
+					    <li role="presentation">
+					         <input type="radio" name="意见" value="">李老师
+					    </li>
+					    <li role="presentation">
+					        <input type="radio" name="意见" value="">王老师
+					    </li>
+    				</ul>
+					</div>
+					<label><input type="radio" name="意见" value=""checked>&nbsp;&nbsp;对本平台的意见</label>
+					<label><input type="radio" name="意见" value="">&nbsp;&nbsp;技术问题</label>
+					<label><input type="radio" name="意见" value="">&nbsp;&nbsp;其它</label>
+					<hr/>
+					<textarea placeholder="请填写对老师或对本平台的意见" required=""data-toggle="popover" data-placement="left" data-content="先选评论对象再评论" title="提示"data-trigger="hover"></textarea>
+					<!-- placeholder无法显示记住调试 -->
+					<p>请填写您的联系方式，以便管理员联系您，我们对您的隐私绝对保密</p>
+					<input type="text" style="width:90%;margin-top:10px;margin-bottom:20px;" placeholder="请填写必要的联系方式，如姓名，电话等"><br/>
+					<input type="submit" value="提交" class="btn btn-primary">
+					<br>
+					<h4>我的反馈</h4>
+					<hr>
+					<p class="history">
+						您还没有任何反馈，提出您宝贵的意见吧！
+					</p>
+					<!-- 动态生成历史反馈记录 -->
+
+
+				</form>
+
+						
+				
+			
+		
+			</div>
+			 <!-- <div style="clear:both;"></div> -->
+	    </div>
+		<div id="footer">
+			<a href="">网站首页</a>
+			<a href="">讲师招募</a>
+			<a href="">企业合作</a>
+			<a href="">联系我们</a>
+			<a href="">意见反馈</a>
+			<a href="">友情分享</a>
+		</div>
+	</div>
+	<!-- back top -->
+	<div class="top"><a href="#top" style="color:green;"><span class="glyphicon glyphicon-arrow-up">top</span></a></div>
+	
+</body>
+</html>

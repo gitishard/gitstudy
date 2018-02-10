@@ -1,0 +1,25 @@
+.ti_tx, .mi_tx, .mer_tx{width: 100%;text-align: center;margin: 10px 0;}
+.time, .mins, .meridian{width: 60px;float: left;margin: 0px 10px;font-size: 20px;color: #2d2e2e;font-family: 'arial';font-weight: 700;}
+.prev, .next{cursor: pointer;padding: 18px;width: 28%;border: 1px solid #ccc;margin: auto;background: url(../images/arrow.png) no-repeat;border-radius: 5px;}
+.prev:hover, .next:hover{background-color:#ccc;}
+.next{background-position: 50% 150%;}
+.prev{background-position: 50% -50%;}
+.time_pick{position:relative;}
+.timepicker_wrap{padding: 10px;border-radius: 5px;z-index: 2; width:200px;display:none;box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);background:#f6f6f6;border:1px solid #ccc;float:left;position:absolute;top:27px;left:0px;}
+/*width:240px;*/
+.arrow_top{position: absolute;top: -10px;left: 20px;background: url(../images/top_arr.png) no-repeat;width: 18px;height: 10px;z-index: 3;}
+/*www.sucaijiayuan.com*/
+*{margin:0;padding:0;}
+body {
+font-family: 'arial';
+/*background-color:#36F;
+*/}
+a {
+text-decoration: none;
+color: #66666B;
+}
+a span {
+font-size: 12px;
+}
+/*input{padding:8px 5px;width:250px;border-radius:3px;border:1px solid #ddd;outline:none;text-align:center;color:#666;box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.35);}*/
+/*input:focus{border-color:#ccc;color:#333;}*/

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Space Bowling</title>
+	<link rel="stylesheet" href="./game.css" type="text/css">
+	<script type="text/javascript" src="file://E:/Downloads/bootstrap/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./game.js"></script>
+</head>
+<body>
+	<div id="game">
+		<div id="gameui">
+			<div id="gameintro">
+				<h1>Sapce Bowling</h1>
+				<p>This is an awesome game</p>
+				<p><a href="#" id="gameplay" class="button">Play</a></p>
+			</div>
+			<div id="gamestats">
+				<p>行星数量:<span id="gameremaining"></span></p>
+				<p>点击次数:<span class="gamescore"></span></p>
+				<p><a href="#" class="gamereset">重新开始</a></p>
+			</div>
+			<div id="gamecomplete">
+				<h1>You win!</h1>
+				<p>Congratulations,you completed the game in <span class="gamescore">clicks</span>times</p>
+				<p><a href="#" class="gamereset button">Play Again</a></p>
+			</div>
+		</div>
+		<canvas id="gamecanvas" width="350px" height="600px"></canvas>
+	</div>
+</body>
+</html>

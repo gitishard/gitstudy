@@ -1,0 +1,206 @@
+﻿<!DOCType html>
+<html>
+<head>
+	<meta http-equiv="Content-Text"; content="text/html charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我的课程</title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="home_page.css"/>
+</head>
+<body>
+	<a href="#top"></a>
+	<div>
+		<div id="head">
+			<img src="logo.png" alt="青蓝教育" id="himg">
+			<a class="ha" href="#">课程商场</a>
+			<a class="ha" href="#">分享</a>
+			<a class="ha" href="#">联系我们</a>
+			<div class="input-group"id="hinput">
+				<input type="text" class="form-control" placeholder="搜索" style="outline:none;">
+				<span class="input-group-btn">
+					<button class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
+				</span>
+			</div>
+		</div>
+		<div id="body" >
+				<div class="col-sm-3 col-md-3">
+					<img src="head.jpg" alt="头像" class="img-circle" id="bimg">
+				</div>
+				<div id="binfo" class="col-sm-9 col-md-9">
+					<div id="bp">
+						<h1>name</h1>
+						<h5>address</h5>
+					</div>
+				</div>
+		</div>
+		<div class="container" id="content">
+			<div style="width:10%;float:left;">
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-home"></span>
+							&nbsp;&nbsp;&nbsp;课程
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;消息
+							<span class="badge" id="badgecolor">3</span>
+						</a>
+						</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;&nbsp;收藏
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;&nbsp;订单
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class=" 	glyphicon glyphicon-bullhorn"></span>&nbsp;&nbsp;&nbsp;吐槽
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class=" 	glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;账号
+						</a>
+					</li>
+				</ul>
+			</div><!--我的课程，消息，路径（计划），题库，订单（学习）记录，吐槽（对老师及本平台的意见），-->
+			
+			<div id="Cdisplay">
+
+						
+				<div class=" Ccourse">
+						<div class="col-sm-3 col-md-3 Cimg">
+							<img src="piano.jpg" alt="course_name">
+						</div>
+						<div class="col-sm-9 col-md-9 Ccourseinfo">
+							<button style="position:relative;left:90%;"class="btn" data-toggle="modal" data-target="#myModal">提问</button>
+							<!-- 模态框开始 -->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    							<div class="modal-dialog">
+        							<div class="modal-content">
+							            <div class="modal-header">
+							                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							                <h4 class="modal-title" id="myModalLabel">向老师提问</h4>
+							            </div>
+							            <div class="modal-body">
+							            	<form action="">
+								            	<textarea required="" rows="3" placeholder="输入对老师的问题" id="question"></textarea>
+								                <button type="submit" class="btn btn-primary"style="position:relative;left:500px;" onclick="check()">提交</button>
+							                </form>
+							            </div>
+							        </div><!-- /.modal-content -->
+							    </div><!-- /.modal -->
+							</div>
+							<!-- 模态框结束 -->
+							<p>订单名：钢琴</p>
+							<p>订单时间：2012.10.1~2012.12.1</p>
+							进度：							
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-info" role="progressbar"aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+									<span>完成40%</span>
+								</div>
+							</div>
+						</div>
+				</div>
+				<!-- <div class=" Ccourse">
+						<div class="col-sm-3 col-md-3 Cimg">
+							<img src="piano.jpg" alt="course_name">
+						</div>
+						<div class="col-sm-9 col-md-9 Ccourseinfo">
+							<p>订单名：钢琴</p>
+							<p>订单时间：2012.10.1~2012.12.1</p>
+							<p>价格：1000￥</p>
+										进度：							
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-info" role="progressbar"aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+									<span>完成40%</span>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class=" Ccourse">
+						<div class="col-sm-3 col-md-3 Cimg">
+							<img src="piano.jpg" alt="course_name">
+						</div>
+						<div class="col-sm-9 col-md-9 Ccourseinfo">
+							<p>订单名：钢琴</p>
+							<p>订单时间：2012.10.1~2012.12.1</p>
+							<p>价格：1000￥</p>
+										进度：							
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-info" role="progressbar"aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+									<span>完成40%</span>
+								</div>
+							</div>
+						</div>
+				</div>
+			 -->
+		
+			</div>
+			 <!-- <div style="clear:both;"></div> -->
+	    </div>
+		<div id="footer" style="position:relative;">
+			<a href="">网站首页</a>
+			<a href="" id="connect_us"disabled>联系我们</a>
+			<div id="connect" style="position:absolute;width:200px;text-align:left;color:white;left:60%;bottom:30px;">
+				<h4>联系电话：110</h4>
+				<h4>邮件：120@qq.com</h4>
+			</div>
+			<a href="" id="a_guanzhu" disabled>关注我们</a>
+			<div id="guanzhu" style="position:relative;bottom:150px;">
+				<img src="weixi.png" alt="公众号"/>
+			</div>
+			<!-- <a href="">讲师招募</a>
+			<a href="">企业合作</a> -->
+			<!-- <a href="">意见反馈</a> -->
+			<!-- <a href="">友情分享</a> -->
+		</div>
+	</div>
+	<!-- back top -->
+	<div class="top"><a href="#top" style="color:green;"><span class="glyphicon glyphicon-arrow-up">top</span></a></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+        $(".top").hide();  
+        $(window).scroll(function(){  
+            if($(window).scrollTop()>100){  
+                //$("#return-top").show();
+                $('.top').fadeIn(300);  
+                }  
+                else{$('.top').fadeOut(200);}  
+              
+            });  
+        $('.top').click(function(){   
+              	$('body,html').animate({scrollTop:0},300);  
+                return false;      
+            });
+        $("#guanzhu").hide();
+        $("#connect").hide();
+		$("#a_guanzhu").mouseover(function(){
+			$("#guanzhu").toggle();
+		});
+		$("#a_guanzhu").mouseout(function(){
+			$("#guanzhu").toggle();
+		});
+		$("#connect_us").mouseover(function(){
+			$("#connect").toggle();
+		});
+		$("#connect_us").mouseout(function(){
+			$("#connect").toggle();
+		});
+
+    });
+		
+		// function check() {
+		//  	setTimeout("$('#myModal').modal('hide')",3000);  
+		//  }
+	</script>
+</body>
+</html>

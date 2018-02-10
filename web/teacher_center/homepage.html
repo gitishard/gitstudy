@@ -1,0 +1,355 @@
+﻿<!doctype html>
+<html>
+	<head>
+        <script type="text/javascript" src="..\bootstrap-3.3.7-dist\js\jquery.min.js"></script>
+		<meta http-eqiv="Conent-Type";content="text/html charset=utf-8">
+		<meta name="viewport" content="width=width-device,initial-scale=1.0">
+		<title>教师个人中心</title>
+        <script type="text/javascript" src="..\bootstrap-3.3.7-dist\js\bootstrap.js"></script>
+        <!--<script type="text/javascript" src="file://E:\Downloads\jquery-ui-1.12.1.custom\external\jquery\jquery.js"></script>-->
+        <script type="text/javascript" src="..\jquery-ui-1.12.1.custom\jquery-ui.min.js"></script>
+        <script src="..\Timepicki时间选择插件\js/timepicki.js"></script>
+		<!--<script type="text/javascript" src="./to_top.js"></script>-->
+		<link rel="stylesheet" type="text/css" href="..\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="..\jquery-ui-1.12.1.custom\jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="..\Timepicki时间选择插件/css/timepicki.css"/>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script type="text/javascript" src="./addclass.js"></script>
+		<script type="text/javascript" src="./new.js"></script>
+	</head>
+	<body>
+		<!--登录后直接就是最新的动态-->
+		<div>
+			<div id="head"><!--head-->
+				<!-- <form>
+					<div class="input-group ipt">
+						<input type="text" class="form-control" placeholder="search">
+						<span class="input-group-btn"><button class="btn btn-default" type="button">search</button></span>
+					</div>
+				</form> -->
+				<!-- <img src="logo.png" alt="青蓝教育"> -->
+				<h1>青蓝教育</h1>
+				<a href="#" id="top"></a>
+			</div>
+			<div class="container">
+				<div class="row"><!--body-->
+	                    <div><!--introduce-->
+	                    	<div>
+		                   	  <h3>Teacher name
+								
+									<a href="#123" id="exit_a" onclick="return exit()" data-toggle="popover">
+										<small>
+											<span class="glyphicon glyphicon-off" title="退出登录"></span>
+											<label for="" id="exit_label">退出登录</label>
+										</small>
+									</a><!--此处加了onclick事件-->
+		                   	  </h3>
+		                   	  <br/><br/>
+	                   	    </div>
+					   </div>
+						<div><!--display-->
+							<div id="content">
+								<div class="nav-border"><!--nav-->
+									<ul class="nav nav-tabs nav-justified">
+										<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\主页.html" class="active"><span class="	glyphicon glyphicon-home nav-gly" ></span><br>工作空间</a></li>
+										<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\发布的课程.html"><span class="	glyphicon glyphicon-book nav-gly"></span><br>发布的课</a></li>
+										<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\教师订单.html"><span class="	glyphicon glyphicon-list-alt nav-gly"></span><br>订单详情</a></li>
+										<li><a href="file://E:\Downloads\bootstrap\web\teacher_center\账户信息\账户信息.html"><span class="glyphicon glyphicon-user nav-gly"></span><br>账户信息</a></li>
+									</ul>
+								</div>
+
+								<div id="tongzhi">
+									<form onsubmit="return tongzhi_check(this)">
+										<textarea name="" id="tongzhi_textarea" rows="4" placeholder="发布通知/上传课件" style="width:100%;"></textarea>
+										<div id="tongzhi_buttongroup">
+											<input type="file" id="tongzhi_file"/>
+											<div class="dropdown">
+												<button class="btn btn-default drop-toggle" data-toggle="dropdown" id="submitTongzhi" title="选择发送对象并发布通知或课件">发布通知
+												<span class="caret"></span>
+												</button>
+												<div id="fabutongzhi_tips"><b>点击发布通知，然后选择发送的对象就可以发布喽！</b></div>
+												<ul class="dropdown-menu" role="menu" aria-labelledby="submitTongzhi">
+													<li role="presentation"><span class="glyphicon glyphicon-user"></span> 发送对象</li>
+													<li role="presentation" class="divider"></li>
+													<!--course start-->
+													<li role="presentation">
+														<button href="#" role="menuitem" tabindex="-1" class="fabu_object">
+															<input type="checkbox" name="courses" value="all" checked>all
+														</button>
+													</li>
+													<li role="presentation">
+														<button href="#" role="menuitem" tabindex="-1" class="fabu_object">
+															<input type="checkbox" name="courses" value="piano class"> piano class
+														</button>
+													</li>
+													<li role="presentation">
+														<button href="#" role="menuitem" tabindex="-1" class="fabu_object">
+															<input type="checkbox" name="courses"> guitar class
+														</button>
+													</li>
+													<li role="presentation">
+														<button href="#" role="menuitem" tabindex="-1" class="fabu_object">
+															<input type="checkbox" name="courses"> dance class
+														</button>
+													</li>
+													<li role="presentation" class="divider"></li>
+													<li role="presentation">
+														<button type="submit" class="btn btn-default btn-block">发布</button>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</form>
+									<form action="" onsubmit="return class_check(this)"id="fabuclassform">
+										<div class="panel panel-default"data-placement="right" data-content="点击发布课程可以发布您要发布的课程" title="提示"data-trigger="hover">
+											<div class="panel-heading">
+												<h4 class="panel-title" style="text-align:right;">
+													<!--schedule-->
+													<span class="glyphicon glyphicon-calendar"style="margin-right:20px;" title="显示您的课程安排"data-toggle="modal" data-target="#schedule" >课程表</span>
+													<div class="modal fade" id="schedule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														<div class="modal-dialog"style="width:800px;">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+																		&times;
+																	</button>
+																	<h4 class="modal-title" id="myModalLabel" style="text-align:left;">
+																		课程表
+																	</h4>
+																</div>
+																<div class="modal-body">
+																	<div class="schedule">
+																		<table class="free-time-search table-fixed table table-bordered">
+																		<thead>
+																			<th>时间</th>
+																			<th>周一</th>
+																			<th>周二</th>
+																			<th>周三</th>
+																			<th>周四</th>
+																			<th>周五</th>
+																			<th>周六</th>
+																			<th>周日</th>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>上午</td>
+																				<td></td>
+																				<td class="have-classes">
+																					<b>吉他课</b>
+																					<span class="classesTime">
+																						8:30~9:30
+																					</span>
+																					<i>地点：北辰区，河北工业大学北城校区12教A202</i>
+																				</td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																			</tr>
+																			<tr >
+																				<td>下午</td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																				<td class="have-classes">
+																					<b>钢琴课</b>
+																					<span class="classesTime">
+																						12:30~16:30
+																					</span>
+																					<i>地点：北辰区，河北工业大学北城校区12教A202</i>
+																				</td>
+																				<td></td>
+																				<td></td>
+																			</tr>
+																			<tr >
+																				<td>晚上</td>
+																				<td></td>
+																				<td></td>
+																				<td class="have-classes">
+																					<b>游泳</b>
+																					<span class="classesTime">
+																						18:30~20:30
+																					</span>
+																					<i>地点：北辰区，河北工业大学北城校区12教A202</i>
+																				</td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																				<td></td>
+																			</tr>
+																		</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div><!-- /.modal-content -->
+														</div><!-- /.modal -->
+													</div><!--schedule-->
+													<a href="#fabuclass"data-toggle="collapse" class="btn btn-default"><b>发布课程</b>
+													<span class="glyphicon glyphicon-pencil"></span></a>
+												</h4>
+											</div>
+											<div class="panel-collapse collapse" id="fabuclass">
+												<div class="panel-body">
+													<div style="display:flex;">
+														<div style="width:50%;">
+															<label for=""class="col-sm-3 col-md-3  distance">课程名</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input class="form-control distance" type="text" placeholder="课程名" id="classname"><!--required-->
+															</div>
+															<label for="" class="col-sm-3 col-md-3 distance"style="clear:left;">课程类型</label>
+															<div class="col-sm-9 col-md-9 distance">
+															<select name="" id="classtype" class="form-control distance">
+																	<option value="" checked></option>
+																	<option value="qiyue">器乐</option>
+																	<option value="shengyue">声乐</option>
+																	<option value="huihua">绘画</option>
+																	<option value="shufa">书法</option>
+																	<option value="qipai">棋牌</option>
+																</select>
+															</div>
+															<label for="" class="col-sm-3 col-md-3  distance">价格</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input class="form-control distance" type="text" placeholder="课程价格" id="classprice">
+															</div>
+															<label for="" class="col-sm-3 col-md-3  distance">课时量</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input class="form-control distance" type="text" placeholder="共多少节课"id="classnumber">
+															</div>
+															<label for="" class="col-sm-3 col-md-3  distance">课程介绍</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<textarea class="form-control distance" rows="6" name=""placeholder="对本门课程的基本介绍" id="classinfo"></textarea>
+															</div>
+														</div>
+														<div style="width:50%;position:relative;">
+															<label for="" class="col-sm-3 col-md-3  distance">地点</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input class="form-control distance" type="text" placeholder="上课地点"id="classplace">
+															</div>
+															<label for="" class="col-sm-3 col-md-3 distance" style="clear:left;">开始日期</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input type="text" id="StartTime" autocomplete="off" placeholder="选择课程开始时间" class="form-control" data-toggle="popover" data-placement="left" data-content="选择后点击空白处或再次点击输入框便可以将您所选时间确定" title="提示"data-trigger="hover">
+															</div>
+															<label for="" class="col-sm-3 col-md-3 distance"style="clear:left;">结束日期</label>
+															<div class="col-sm-9 col-md-9 distance">
+																<input type="text" id="EndTime" autocomplete="off" placeholder="选择课程结束时间" class="form-control" data-toggle="popover" data-placement="left" data-content="选择后点击空白处或再次点击输入框便可以将您所选时间确定" title="提示"data-trigger="hover">
+															</div>
+
+															<label for=""class="col-sm-3 col-md-3  distance">课程表</label>
+																<div class="col-sm-9 col-md-9 distance">
+																	<label for="" class="col-sm-3 col-md-3  distance">星期</label>
+																	<div class="col-sm-8 col-md-8 distance">
+																		<select class="form-control"id="xingqi"data-toggle="popover" data-placement="left" data-content="选择星期" title="提示"data-trigger="hover">
+																			<option value="" checked></option>
+																			<option value="星期一">星期一</option>
+																			<option value="星期二">星期二</option>
+																			<option value="星期三">星期三</option>
+																			<option value="星期四">星期四</option>
+																			<option value="星期五">星期五</option>
+																			<option value="星期六">星期六</option>
+																			<option value="星期日">星期日</option>
+																		</select>
+																	</div>
+																	<label for="" class="col-sm-3 col-md-3  distance">上课</label>
+																	<div class="col-sm-8 col-md-8 distance">
+																	<input  type="text" class="form-control"id="updatesegment" autocomplete="off"placeholder="选择上课时间段">
+																	</div>
+																	<label for=""class="col-sm-3 col-md-3  distance">下课</label>
+																	<div class="col-sm-8 col-md-8 distance">
+																	<input type="text" class="form-control"id="downdatesegment" autocomplete="off" data-toggle="popover" data-placement="bottom" data-content="点击加号确认课程或继续发布课程" title="提示"data-trigger="hover"placeholder="选择下课时间">
+																	<input type="text" id="sumcourse"style="display:none;">
+																	</div>
+																	<button id="addclass" class="glyphicon glyphicon-plus-sign" style="color:red;"title="提示" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="同一周内的同一门课可以有三个上课时段" type="button"></button>
+																	<button id="minusclass" class="	glyphicon glyphicon-minus-sign" style="color:green;"title="提示" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="取消一次所加的课程" type="button"></button>
+																</div>
+															<button class="btn btn-primary btn-sm distance" id="fabu_button" type="submit">发布</button><!--onclick="sumcourse()"-->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+
+
+								<div class="comment alert alert-warning">
+									<h4><b>学生的提问</b></h4>
+									<hr/>
+										<!-- 问题内容 -->
+									<div>
+										<a href="" class="close" data-dismiss="alert">&times;</a>
+										<p>
+											问题 问题问题问题 问题问题问题 问题问题问题 问题问题问题 问题问题问题 问题问题问题 问题问题问题 问题问题问题 问题问题11问题 问题问题
+										</p>
+									</div>
+								    <!-- 问题内容结束 -->
+								    <a href="#" data-toggle="modal" data-target="#mymodal" class="reply">回复</a>
+								    <ol class="breadcrumb">
+										<li>student name</li>
+										<li>2013</li>
+										<li>03</li>
+										<li>16</li>
+									</ol>
+								    <!-- 模态框 -->
+								    <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="mdllbl" aria-hidden="true">
+								    	<div class="modal-dialog">
+								    		<div class="modal-content">
+								    			<div class="modal-header">
+								    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" title="删除">&times;</button>
+								    				<h3 class="modal-title" id="mdllbl">问题回复</h3>
+								    			</div>
+								    			<div class="modal-body">
+								    				<form>
+								    					<textarea class="form-control"></textarea>
+								    				</form>
+								    			</div>
+								    			<div class="modal-footer">
+								    				<button type="button" class="btn btn-primary" onclick="submit()">提交</button>
+								    			</div>
+								    		</div>
+								    	</div>
+								    </div>
+								    <!-- 模态框 -->
+								 </div><!--提问部分
+								<!--没课图片-->
+								<!-- <div style="width:300px;height:300px;margin:auto;">
+									<img src="file://C:\Users\lenovo\Pictures\没有收藏.png" alt="">
+								</div> -->
+								<!--没课图片-->
+							</div> 
+						</div>
+				</div>
+			</div>
+			<div class="footer"><!--footer-->
+				<!-- div class="col-sm-6">
+					<p style="display:inline;"><h2>青蓝教育平台</h2></p>
+					<p>本公司立足于文化艺术行业，立志认真做艺术。商业化是我们的方式，<br/>
+						让每个人更懂得文化，更爱艺术，享受诗意生活是我们的追求。<br/>
+						公司主营业务有：创意文化内容及产品，艺术品，艺术培训和教育</p>
+				</div> -->
+				<div class="fr">
+						<a href="#" class="fa" id="connect_us">联系我们</a>
+						<div id="connect">
+							<h5>联系电话：110</h5>
+							<h5>邮件：120@qq.com</h5>
+						</div>
+						<a href="#" class="fa">网站首页</a><!--主页-->
+						<a href="#" class="fa" id="a_guanzhu">关注我们</a>
+						<div id="guanzhu">
+							<img src="weixi.png" alt="公众号"/>
+						</div>
+						<!-- <a href="#" class="fa">内容招募</a>
+						<a href="#" class="fa"> 意见反馈</a> -->
+				</div>	
+			</div>
+		</div>
+		<div class="top">
+			<a href="#top" style="color:green;">
+				<span class="glyphicon glyphicon-arrow-up">top</span>
+			</a>
+		</div>
+	</body>
+ 	<!-- <script type="text/javascript">
+	 </script>-->
+</html>

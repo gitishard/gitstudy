@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/register.js"></script>
+    <script src="js/timeData.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="register.css">
+	<meta http-equiv="Content-Type"; content="text/html charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>登录</title>
+</head>
+<body style="background-image:url(lan_beijing.jpg);background-size:cover;">
+	<div style="width:800px;margin-left:auto;margin-right:auto;">
+		<div>
+			 <h2 class="page-header" style="color:blue;margin-left:50px;">注册账号</h2>
+			 <div style="float:right">
+		    	已有账号？去<a href="file:\\E:\Downloads\登录页面.html" display:inline>登录</a>
+		    </div>
+	    </div>
+	    <!--登录主体-->
+	    	<div style="width:50%;margin-left:auto;margin-right:auto;"class="container">
+					<form role="form" class="form-horizontal" id="register" method="post" onsubmit="return check(this)">
+						<div class="form-group">
+							<label class="control-label col-sm-4">姓名</label>
+							<div class="col-sm-8"><input class="form-control" id="Name" type="text" name="name" title="真实姓名" placeholder="输入真实姓名"/></div>
+					    </div>
+					    <div class="form-group">
+					    	<label class="control-label col-sm-4">性别</label>
+							<input  type="radio" name="sex" value="男"style="height:15px;width:50px" checked>男
+							<input  type="radio" name="sex" value="女"style="height:15px;width:50px">女<br/>
+					    </div>
+						<!--birth date-->
+						<div  class="form-group">
+							
+								<div style="position: relative;">
+									<label class="control-label col-sm-4">出生日期</label>
+									<div class="col-sm-8 col-md-8">
+										<input type="text" name="date" id="dataInput" value=""class="form-control"/>
+									</div>
+								</div>
+					    </div>
+						<div class="form-group">
+							<label class="control-label col-sm-4">地址</label>
+							<div class="col-sm-8"><input class="form-control" id="address" type="text" name="address" placeholder="xx省xx市xx区/县"></div>
+					    </div>
+					    <div class="form-group">
+							<label class="control-label col-sm-4">工作单位</label>
+							<div class="col-sm-8"><input class="form-control" id="unit" type="text" name="unit" placeholder="xx公司"></div>
+					    </div>
+					    <div class="form-group">
+							<label class="control-label col-sm-4">邮箱</label>
+							<div class="col-sm-8"><input class="form-control" id="mail" type="text" name="account" title="QQ/其他邮箱" placeholder="手机号/其他邮箱"/></div>
+					    </div>
+						<div class="form-group">
+							<label for="exampleInputPassword" class="control-label col-sm-4">密码</label>
+							<div class="col-sm-8"><input class="form-control" id="password" type="password" name="password" title="6-16位密码，区分大小写" placeholder="6-16位密码，区分大小写"></div>
+					    </div>
+					    <div class="form-group">
+							<label class="control-label col-sm-4">确认密码</label>
+							<div class="col-sm-8"><input class="form-control" id="resurepassword" type="password" name="sure_password" placeholder="再次输入密码"/></div>
+					    </div>
+					   <!-- <div class="form-group">
+							<label class="control-label col-sm-4">验证码</label>
+							<div class="col-sm-8"><input class="form-control" type="text"/></div>
+					    </div>a-->
+						<div class="form-group">
+							<label class="control-label col-sm-4">手机号</label>
+							<div class="col-sm-8"><input class="form-control" id="telphonenum" type="text" name="telnumber" title="11位手机号" placeholder="11位手机号"></div><br><br>
+						</div>
+						<div class="form-group">
+					        <label class="control-label col-sm-4">短信验证码</label>
+							<div class="col-sm-8">
+								<div class="input-group">
+									<input id="messagecode" class="form-control" type="输入短信验证码" name="shortmessage" placeholder="输入短信验证码"/>
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-primary" id="yanzhengma"onclick="jishi()">获取验证码<span id="timeclock"></span></button>
+								</span>
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-primary " style="width:70%;margin-left:20%;margin-top:10px;" type="submit" value="注册">注册</button><br/>
+					</form>
+			</div>
+		</div>
+</body>
+<script type="text/javascript">
+	$("#yanzhengma").click(function(){
+		$("#yanzhengma").attr('disabled',true);
+		time=90;
+		setTime();
+ 		times = setInterval(setTime, 1000);  
+	});
+	function setTime()
+		{
+		$("#timeclock").text(time);
+		time-=1;
+		if(time<0){
+			time=0;
+		}
+		}
+</script>
+</html>

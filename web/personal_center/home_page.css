@@ -1,0 +1,143 @@
+/*div{
+	border: 1px solid red;
+}*/
+*{
+	margin: 0;
+	padding: 0;
+}
+#head{
+	/*position: fixed;*/
+	height:60px;
+	width: 100%; 
+	background-color:black;
+	
+}
+.ha{
+	color: white; 
+	float:right;
+	margin-right:15px;
+	margin-top:30px;
+}
+#himg{
+	margin-left: 5%;
+	width: 150px;
+
+}
+#hinput{
+	/*display: inline-block;*/
+	width: 200px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 20px;
+	/*-moz-opacity:0.7; 
+	opacity:0.7;*/
+
+	border-bottom: 1px solid white;
+	
+}
+ #hinput input{
+ 	/*outline:none;
+ 	调试时将输入框的背景
+ 	蓝色去掉*/
+	border: none;
+	background-color: black;
+
+}
+
+#hinput button{
+	border: none;
+	background-color: black;
+	color:white;
+}
+
+#body{
+	background-image:url(beijing.jpg);
+	height: 220px;
+	/*margin-top: 50px;*/
+}
+#bimg{
+	margin-left: 40%;
+	margin-top: 5%;
+}
+#binfo{
+	height: 100%;
+}
+#bp{
+	color: white; 
+	margin-top:5%;
+}
+#content ul li{
+	border-bottom: 1px solid #EDF1F2;
+	border-right: 1px solid #EDF1F2;
+}
+#content a{
+	margin-top:20px;
+	/*display:block;*/
+}
+#badgecolor{
+	background-color:red;
+}
+#Cdisplay{
+	width:90%;
+	margin-left:10%;
+}
+#Cdisplay p{
+	margin: 10px 0 10px 0;
+}
+#Cdisplay a{
+	display: inline-block;
+	font-size: 15px;
+	margin: 0 10px 0 10px;
+}
+.Ccourse{
+	margin-top:20px; 
+	width:100%;
+	height:150px;
+	
+}
+.Cimg{
+	height:100%;
+}
+.Ccourseinfo{
+	height:100%;
+	border-bottom:1px solid grey;
+}
+.dingdanhead{
+	border-right: 1px solid white;
+	background-color:#c6c9d2;
+	height: 50px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.dingdan{
+	border: 1px solid #ECECEC;
+	/*border-bottom: 1px solid #ECECEC;*/
+	background-color:##f6f7fb;
+	height: 80px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#footer{
+	text-align:center;
+	background-color:black;
+	height:100px;
+}
+#footer a{
+	display: inline-block;
+	margin: 30px 10px 0 10px;
+	color: white;
+}
+.top{
+	position:fixed;
+	bottom: 100px;
+	right: 10px;
+	}
+label{
+	margin: 10px 20px 10px 10px;
+}
+textarea{
+	width: 90%;
+	height: 200px;
+}

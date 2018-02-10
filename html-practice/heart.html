@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>heart</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color: black;
+		}
+		h1{
+			color: red;
+			margin-left: 50%;
+			transform:rotateZ(-20deg);
+		}
+		.heart{
+			position: relative;
+			width: 200px;
+			height: 260px;
+			margin: 100px auto;
+			transform-style:preserve-3d;
+			animation:rot 15s linear infinite;
+		}
+		@keyframes rot{
+			from{transform:rotateY(0deg) rotateX(0deg);}
+			to{transform:rotateY(360deg) rotateX(360deg);}
+		}
+		.heart .rib{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 260px;
+			border:1px solid red;
+			border-width: 1px 1px 0 0;
+			border-radius: 50% 50% 0/40% 50% 0; 
+		}
+	</style>
+</head>
+<body>
+	<h1>Marry Me</h1>
+	<div class="heart">
+		<div class="cube"></div>
+	</div>
+	
+	<audio src="./gaobaiqiqiu.mp3" autoplay></audio>
+     <script type="text/javascript">
+	 	 var oHeart=document.getElementsByClassName("heart")[0];
+	 	for (var i = 0; i < 36; i++) {
+	 		var oDiv=document.createElement("div");
+	 		oDiv.className='rib';
+	 		oDiv.style.transform="rotateY("+i*10+"deg) rotateZ(45deg) translateX(30px)";
+	 		oHeart.appendChild(oDiv);
+	 	}
+	 </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta http-eqiv="Conent-Type"; content="text/html charset=utf-8">
+		<title>教师订单</title>
+        <script type="text/javascript" src="../bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<!--登录后直接就是最新的动态-->
+		<div>
+			<div id="head"><!--head-->
+				<form>
+					<div class="input-group ipt">
+						<input type="text" class="form-control" placeholder="search">
+						<span class="input-group-btn"><button class="btn btn-default" type="button">search</button></span>
+					</div>
+				</form>
+				<h1>青蓝教育</h1>
+				<a href="#" id="top"></a>
+			</div>
+			<div class="container">
+				<div class="row"><!--body-->
+	                    <div><!--introduce-->
+	                    	<div>
+		                   	  <h3>Teacher name
+	                            <small>认证状态</small>
+		                   	  </h3>
+		                   	  <label>course </label>
+	                   	    </div>
+							<div><!--nav-->
+								<ul class="nav nav-tabs nav-justified">
+									<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\主页.html" class="active">工作空间</a></li>
+									<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\发布的课程.html">发布的课程</a></li>
+									<li><a href="file://E:\Downloads\bootstrap\bootstrap-3.3.7-dist\教师订单.html">订单详情</a></li>
+									<li><a href="file://E:\Downloads\bootstrap\web\teacher_center\账户信息\账户信息.html">账户信息</a></li>
+								</ul>
+							</div>
+					   </div>
+		            <!--<div style="clear:both;"></div>-->
+					<div><!--display-->
+						<div id="content">
+							<div class="row">
+								<div class="col-sm-4 col-md-4 dingdanhead">订单信息</div>
+								<div class="col-sm-4 col-md-4 dingdanhead">开始/结束日期</div>
+								<div class="col-sm-4 col-md-4 dingdanhead">订单价格</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>course name</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>2012.10.1~2013.5.1</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>￥1500</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>course name</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>2012.10.1~2013.5.1</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>￥1500</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>course name</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>2012.10.1~2013.5.1</p>
+								</div>
+								<div class="col-sm-4 col-md-4 dingdan">
+									<p>￥1500</p>
+								</div>
+							</div>
+							
+							
+							
+						</div>		
+					</div>
+				</div>
+			</div>
+			<div class=" footer"><!--footer-->
+				<div class="col-sm-6">
+					<p style="display:inline;"><h2>青蓝教育平台</h2></p>
+					<p>本公司立足于文化艺术行业，立志认真做艺术。商业化是我们的方式，让每个人更懂得文化，更爱艺术，享受诗意生活是我们的追求。<br/>
+						公司主营业务有：创意文化内容及产品，艺术品，艺术培训和教育</p>
+				</div>
+				<div class="col-sm-6 fr">
+						<a href="#" class="fa">联系我们</a>
+						<a href="#" class="fa">关于我们</a>
+						<a href="#" class="fa">内容招募</a>
+						<a href="#" class="fa"> 意见反馈</a>
+				</div>	
+			</div>
+		</div>
+		<div class="top"><a href="#top"style="color:green;"><span class="glyphicon glyphicon-arrow-up">top</span></a></div>
+	</body>
+	<script type="text/javascript">
+	$(document).ready(function (){
+		var h=$("#content").height();
+		// alert(h);
+		if(h<80){
+			// $("#content").height=600+"px";
+			// $("#content").css("border","1px solid red");
+			$("#content").css("height","300px");
+		}
+
+	});
+		
+		
+	</script>
+</html>

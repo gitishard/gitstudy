@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--声明当前页面的编码格式 国际编码 UTF-8 中文编码 GBK-->
+    <meta charset="UTF-8">
+    <!--声明当前页面的三要素-->
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>please enter your title</title>
+    <!--样式css 修饰 衣服 化妆品-->
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#000;
+			perspective:780px;/*景深:800-1000*/
+		}
+		.cube{
+			position:relative;
+			width:200PX;
+			height:200px;
+			margin:300px auto;
+			color:#fff;
+			transform-style:preserve-3d;
+			transform-origin:50% 50% -101px;/*默认值 50% 50% 0 水平X 竖直Y Z轴*/
+		}
+		.cube div{
+			position:absolute;
+			left:0;
+			top:0;
+			width:200PX;
+			height:200px;
+			border:2px solid red;
+		}
+		.cube div:nth-child(1){/* css3结构伪类选择器 */
+			top:-202px;
+			transform-origin:bottom;/*旋转中心*/
+			transform:rotateX(90deg);
+		}
+		.cube div:nth-child(2){
+			top:202px;
+			transform-origin:top;
+			transform:rotateX(-90deg);
+		}
+		.cube div:nth-child(3){
+			left:-202px;
+			transform-origin:right;
+			transform:rotateY(-90deg);
+		}
+		.cube div:nth-child(4){
+			left:202px;
+			transform-origin:left;
+			transform:rotateY(90deg);
+		}
+		.cube div:nth-child(5){
+		}
+		.cube div:nth-child(6){
+			transform:translateZ(-202px);
+		}
+		.cube:hover{
+			animation:rot 2s linear;
+		}
+		@keyframes rot{
+			from{
+				transform:rotateY(0deg);
+			}
+			to{transform:rotateY(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="cube">
+		<div>上</div>
+		<div>下</div>
+		<div>左</div>
+		<div>右</div>
+		<div>前</div>
+		<div>后</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+*{
+	margin:0;
+	padding: 0;
+}
+#head{
+	   background-color: #eee;
+	   width: 100%;
+	   border: 1px solid white;
+	 }
+#exit_label{
+	position:absolute;
+	left: 260px;
+	top: 100px;
+}
+.nav-border{
+	background-color:#333;
+}
+.nav a{
+	color: white;
+	display: inline-block;
+	border-right: 1px dotted white !important;
+	border-bottom: 1px dotted white !important;
+}
+.nav a:hover{
+	box-shadow: 5px 5px 5px black;
+	background-color: #ccc !important;
+	color: black;
+}
+.nav-gly{
+	font-size:20px;
+}
+#content{
+	width: 80%; 
+	margin:0 auto;
+}
+.distance{
+	margin-top: 5px;
+}
+#tongzhi{
+	width:100%;
+	margin-bottom:20px;
+	background-color:#dee4e2;
+}
+#submitTongzhi{
+	position:relative;
+	/*left:400px;*/
+}
+#tongzhi_buttongroup{
+	display:flex;
+	width:370px;
+	margin-left:60%;
+}
+#fabutongzhi_tips{
+	position: absolute;
+	left: 110px;
+	top:-20px;
+	width: 160px;
+	background-color:#eee;
+}
+.fabu_object{
+	border:0;
+	background-color:white;
+}
+#fabuclasses{
+	position:relative;
+	left:90%;
+	top:-45px;
+}
+#fabu_button{
+	position:absolute;
+	/*top:250px;*/
+	top:93%;
+	right:-15px;
+}
+.comment{
+	width:100%;
+	background-color:white;
+}
+.comment p{
+	padding: 5px 30px;
+}
+.reply{
+	display: inline-block;
+	position: relative;
+	left: 90%;
+	top: 20px;
+
+}
+.breadcrumb{
+	background-color: white !important;
+	padding: 0;
+	margin: 0;
+}
+.dingdanhead{
+	font-size: 20px;
+	background-color: #E6E3E3;
+	height: 50px;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	border-right: 1px solid white;
+}
+.dingdan{
+	border: 1px solid #E6E3E3;
+	height: 80px;
+	margin: 10px 0;
+	text-align: center;
+	background-color: white;
+}
+.dingdan p{
+	margin: 30px auto;
+}
+.top{
+	position:fixed;
+	width: 40px;
+	height: 20px;
+	background-color:grey;
+	 bottom: 100px;right: 10px;
+	}
+.footer{
+	width: 100%;
+	height: 50px;
+	background-color: #e9e9e9;
+}
+.fr{
+	text-align:center;
+	margin-top:50px;
+
+}
+.fa{
+	margin-right: 10px;
+}
+#connect{
+	position:absolute;
+	width:200px;
+	left:40%;
+	bottom:50px;
+	text-align:left;
+}
+#guanzhu{
+	position:absolute;
+	width:200px;
+	left:50%;
+	bottom:50px;
+}
+.errortip{
+	color: red;
+}
+body{
+	/*background-image:url(qq.jpg);*/
+	/*background-size: cover;*/
+	position:relative;
+	background-color: #eee;
+}
+h1{
+	color: blue;
+	margin-left: 50px;
+}
+a{
+	color: black;
+	display:inline-block;
+}
+/*a:hover{
+	background-color: white;
+}*/
+.ipt{
+	width: 200px; 
+	float: right;
+	margin-top:30px;
+	margin-right: 20px;
+}
+.free-time-search td{
+		cursor:pointer;
+	}
+	.table-fixed {
+		table-layout:fixed;
+	}
+	.schedule{
+		/*width: 720px;*/
+		background-color: white;
+	}
+	.have-classes{
+		background-color:  #eee;
+		text-align: left;
+	}
+	.classesTime{
+		color: red;
+	}
+.personal-info{
+	/*transform:rotateX(180deg); */
+	background-color: white;
+	box-shadow: 10px 10px 10px black;
+	border-radius: 20px;
+	width: 80%; 
+	margin:30px auto;
+	border: 1px solid black;
+	overflow:auto;
+}
+.personal-info label{
+	margin: 5px 10px 0  5px;
+	font-size: 15px;
+}
+.info-left{
+	/*text-align: right;*/
+	text-align:left;
+	line-height: 15px;
+	font-size: 15px;
+	width: 100px;
+	margin:10px 0 10px 0;
+}
+/*div{
+border: 1px solid white;
+}*/

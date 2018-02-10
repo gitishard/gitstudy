@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width= device-width, initial-scale=1 ">
+	<title>Translate</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	#translate-space{
+		text-align: center;
+		width:300px;
+		margin: 150px auto;
+	}
+	#Body{
+		position: relative;
+		height:300px;
+		background-color: #fff;
+		border:1px solid black;
+		box-shadow: 3px 3px 5px grey,inset 3px 3px 5px grey;
+	}
+	#Body input{
+		width:250px;
+		height:30px;
+		margin:15px auto;
+		border:0;
+		outline:none;
+		border-bottom: 1px solid black;
+	}
+	article{
+		text-align: left;
+		padding-left: 20px;
+		word-wrap:break-word;
+		border-top: 1px solid black;
+	}
+	img{
+		position: absolute;
+		top:1.5em;
+		right:2em;
+		width:20px;
+		height:20px;
+	}
+	.show-result{
+		background-color:rgba(0,0,0,0.3);
+		color: white;
+		position:absolute;
+		display: none;
+		width:180px;
+		height:185px;
+		z-index: 100px;
+		text-align:left;
+		padding-left:20px;
+		padding-top: 20px;
+		border-radius:15px;
+		border:1px solid black;
+		box-shadow:5px 5px 5px black;
+	}
+</style>
+<body style="background-color:#eee;position:relative;">
+	<div>
+		我是拉丝款付了话费卡浪费哈喽哈拉黑啊很好看楼上的回复
+		fuck image harry potter
+	</div>
+	<div id="translate-space">
+		<h1 id="h"><i>Translate</i></h1>
+		<section id="Body">
+			<input id="search" type="text" value="" placeholder="Input...">
+			<a href="#" id="a"><img src="search.jpg" alt="" ></a>
+			<article>
+				hello  world
+			</article>
+		</section>
+	</div>
+	<!-- <div class="show-result"></div> -->
+</body>
+
+
+<!--<div id="YOUDAO_SELECTOR_WRAPPER" class="show-result" style="display:none; margin:0; border:0; padding:0; width:320px; height:240px;"></div>
+<script type="text/javascript" src="http://fanyi.youdao.com/openapi.do?keyfrom=1d1d1d&key=1496737977&type=selector&version=1.2&translate=on" charset="utf-8"></script>-->
+
+
+<script type="text/javascript">
+$(document).ready(function(){		
+	// $("input").keyup(function(){//实时翻译
+	// $('a').click(function(){//点击翻译
+		var adiv="<div class='show-result'></div>";
+		$(document).mouseup(function(e){
+			// searchKey=$("#search").val();//输入框输入的值
+			$("body").append(adiv);
+			searchKey=window.getSelection();
+			if(searchKey!=""){
+				e=e||window.event;
+				var xx=e.clientX+"px";
+				var yy=e.clientY+"px";
+				$(".show-result").css("left",xx).css("top",yy);
+				$(".show-result").css("display",'block');
+			}else{
+				$(".show-result").css("display",'none');
+			}
+			$.ajax({
+				url:"http://fanyi.youdao.com/openapi.do?keyfrom=1d1d1d&key=1496737977&type=data&doctype=jsonp&version=1.1&q="+searchKey,
+				type: 'GET',
+        		dataType: 'JSONP',
+				success:function(result){
+					var sum=" "
+					for(var i=0,num=result.basic.explains.length;i<num;i++){
+						 sum=num-i+'.'+result.basic.explains[i]+'<br/>'+sum
+					}
+					sum='音标：'+'/'+result.basic.phonetic+'/'+'<br/>'+sum
+						$("article").html(sum);
+						$(".show-result").html(sum);	
+				}
+			});
+			searchKey="";
+		});
+});
+</script>
+</html>
