@@ -1,0 +1,40 @@
+ *{
+	margin: 0;
+	padding: 0;
+ }
+ #demo{
+	width:350px;
+	height:350px;
+	border: 1px solid #000;
+	position:relative;
+	margin:100px;
+ }
+ #smil_box{
+	width: 350px;
+	height: 350px;
+	position:relative;
+ }
+ #mask{
+	width:175px;
+	height: 175px;
+	background:rgba(255,255,0,0.4);
+	position:absolute;top:0;
+	left:0;
+	display:none;
+	cursor:move;
+ }
+ #big_box{
+	width: 400px;
+	height: 400px;
+	position:absolute;
+	top:0;
+	left:360px;
+	border: 1px solid #000;
+	overflow:hidden;
+	display:none;
+ }
+ #big_box img{
+	position:absolute;
+	top:0;
+	left:0;
+ }
