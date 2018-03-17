@@ -1,9 +1,13 @@
+import os
 import requests as RS
 from bs4 import BeautifulSoup as BS
 
 url = "http://www.iciba.com/"
 word = input("Please input what you want:")
 while(word != "END"):
+	if word == "cls":
+		os.system('cls')
+	
 	try:
 		page = RS.get(url+word)
 		con = page.content
