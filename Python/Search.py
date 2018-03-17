@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup as BS
 url = "http://www.iciba.com/"
 word = input("Please input what you want:")
 while(word != "END"):
-	if word == "cls":
-		os.system('cls')
-	
+	if word == "":
+		word = input("Please input what you want:")	
+
 	try:
 		page = RS.get(url+word)
 		con = page.content
@@ -38,5 +38,9 @@ while(word != "END"):
 		print("Something Wrong")	
 
 	word = input("Please input what you want:")	
+	
+	if word == "cls":
+		os.system('cls')
+		word = ""
 
 print("Bye-bye")
